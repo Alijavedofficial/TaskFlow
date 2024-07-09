@@ -17,12 +17,36 @@ const BoardContext = React.createContext({
 export const BoardProvider = ({children}:React.PropsWithChildren) => {
 
     const [BoardState, dispatch] = React.useReducer(boardReducer,boardInitialState )
+    const [loading,setLoading] = React.useState<boolean>(false)
+
+    React.useEffect(() => {
+       loadData();
+    },[])
+
+    function loadData() {
+        const localBoardData = localStorage.getItem("@Board")
+
+        if(localBoardData === null) {
+            localStorage.setItem("@Board", JSON.stringify(boardInitialState))
+        } else {
+            const dataObject = JSON.parse(localBoardData)
+            dispatch({type: 'SET_TASKS', payload: dataObject})
+        } 
+        setLoading(false)
+    }
+    if(loading) return;
     return(
         <BoardContext.Provider value={{BoardState, dispatch}}>
             {children}
         </BoardContext.Provider>
     )
 }
+
+export function useBoard() {
+    return React.useContext(BoardContext)
+}
+
+
 
 function boardReducer(state: Board, action:BoardAction):Board {
     switch(action.type) {
@@ -78,7 +102,15 @@ function boardReducer(state: Board, action:BoardAction):Board {
             return newState;
         }
         case 'REMOVE_TASK': {
+            const taskToRemoved = action.payload.id;
+            const newState = {...state};
 
+            for(const column of Object.keys(state.columns)) {
+                newState.columns[column] = newState.columns[column].filter((task) => task.id !== taskToRemoved)
+            }
+
+            localStorage.setItem("@Board", JSON.stringify(newState))
+            return newState;
         }
         default: {
             return boardInitialState
