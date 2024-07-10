@@ -21,7 +21,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`h-screen w-full p-6 lg:p-16 bg-slate-50`}>
+      
+      <body className={`h-screen w-full p-6 lg:p-16 dark:bg-black`}>
         <Providers>
         <div className="md:max-w-screen-xl mx-auto">
           <div className={inter.className}>
@@ -29,7 +30,7 @@ export default function RootLayout({
           </div>
         </div>
         <Analytics />
-        </Providers>
+       </Providers>
       </body>
     </html>
   );

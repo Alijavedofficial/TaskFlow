@@ -1,25 +1,20 @@
 import CompWithFetch from "@/components/CompWithFetch";
 import Dashboard from "@/components/Dashboard";
-import { Button } from "@/components/ui/button";
-import { GitHubLogoIcon, PlusIcon,MoonIcon } from "@radix-ui/react-icons";
-import { useTheme } from 'next-themes';
+import ThemeSwitch from "@/components/ThemeSwitch";
+
 
 
 export default function Home() {
  
   return (
+    
     <main className="">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold"> 
           TaskFlow - Lightweight Task Manager
         </h1>
         <div className="flex items-center gap-3">
-          <Button asChild size={"icon"} 
-          >
-            <a href="https://github.com/betomoedano/Porter-Task-Manager.git">
-              <MoonIcon />
-            </a>
-          </Button>
+         <ThemeSwitch />
           {/* <Button disabled>
             Column <PlusIcon className="ml-1" />
           </Button> */}
