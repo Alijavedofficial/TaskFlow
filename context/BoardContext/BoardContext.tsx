@@ -94,12 +94,17 @@ function boardReducer(state: Board, action:BoardAction):Board {
         }
         case 'ADD_TASK': {
             const newState = {
-                ...state, columns: {
-                    ...state.columns, ["pending"]: [action.payload, ...state.columns.pending]
-                }
-            }
-            localStorage.setItem("@Board", JSON.stringify(newState))
-            return newState;
+                ...state,
+                columns: {
+                  ...state.columns,
+                  ["Pending"]: [action.payload, ...state.columns.Pending],
+                },
+              };
+        
+              // save
+              localStorage.setItem("@Board", JSON.stringify(newState));
+        
+              return newState;
         }
         case 'REMOVE_TASK': {
             const taskToRemoved = action.payload.id;

@@ -99,10 +99,10 @@ function TaskItem({ isDragging, provided, task }: TaskItemProps) {
           <CardDescription
             className={`${
               task.tag === "High"
-                ? "text-red-500 bg-red-50"
+                ? "text-red-500 bg-red-50 dark:bg-red-500 dark:text-white"
                 : task.tag === "Medium"
-                ? "text-yellow-500 bg-yellow-50"
-                : "text-green-500 bg-green-50"
+                ? "text-yellow-500 bg-yellow-50 dark:bg-yellow-500 dark:text-white"
+                : "text-green-500 bg-green-50 dark:bg-green-500 dark:text-white"
             } px-2 py-1 rounded text-xs`}
           >
             {task.tag}

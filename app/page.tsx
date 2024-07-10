@@ -11,7 +11,7 @@ export default function Home() {
     <main className="">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold"> 
-          TaskFlow - Lightweight Task Manager
+          TaskFlow - Task Manager
         </h1>
         <div className="flex items-center gap-3">
          <ThemeSwitch />
