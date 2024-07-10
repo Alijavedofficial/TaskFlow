@@ -1,19 +1,23 @@
 import CompWithFetch from "@/components/CompWithFetch";
 import Dashboard from "@/components/Dashboard";
 import { Button } from "@/components/ui/button";
-import { GitHubLogoIcon, PlusIcon } from "@radix-ui/react-icons";
+import { GitHubLogoIcon, PlusIcon,MoonIcon } from "@radix-ui/react-icons";
+import { useTheme } from 'next-themes';
+
 
 export default function Home() {
+ 
   return (
     <main className="">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-3xl font-bold">
-          Porter - Lightweight Task Manager
+        <h1 className="text-3xl font-bold"> 
+          TaskFlow - Lightweight Task Manager
         </h1>
         <div className="flex items-center gap-3">
-          <Button asChild size={"icon"}>
+          <Button asChild size={"icon"} 
+          >
             <a href="https://github.com/betomoedano/Porter-Task-Manager.git">
-              <GitHubLogoIcon />
+              <MoonIcon />
             </a>
           </Button>
           {/* <Button disabled>
@@ -21,14 +25,7 @@ export default function Home() {
           </Button> */}
         </div>
       </div>
-      <p className="mb-3">
-        Want to build this app yourself? Head over to{" "}
-        <a className="text-blue-500" href="https://codewithbeto.dev">
-          codewithbeto.dev
-        </a>{" "}
-        and check out our React with TypeScript course. <br />
-        Oh, and grab our Early Bird deal while youre at it! 🐤
-      </p>
+      
       <Dashboard />
       <div className="my-3 min-w-fit flex flex-col items-end">
         <h3 className="hidden lg:flex font-bold mb-2">Shortcuts</h3>

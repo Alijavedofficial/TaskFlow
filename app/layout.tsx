@@ -1,6 +1,18 @@
 import { BoardProvider } from "@/context/BoardContext/BoardContext";
-import "../styles/globals.css";
+import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import type { Metadata } from "next";
+import { Montserrat} from "next/font/google";
+import { Providers } from "./providers";
+
+
+const inter = Montserrat({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Taskflow",
+  description: "Lightweight task manager",
+};
+
 
 export default function RootLayout({
   children,
@@ -8,12 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`h-screen w-full p-6 lg:p-16 bg-slate-50`}>
+        <Providers>
         <div className="md:max-w-screen-xl mx-auto">
+          <div className={inter.className}>
           <BoardProvider>{children}</BoardProvider>
+          </div>
         </div>
         <Analytics />
+        </Providers>
       </body>
     </html>
   );
