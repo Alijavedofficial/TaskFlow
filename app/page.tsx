@@ -20,7 +20,11 @@ export default function Home() {
           </Button> */}
         </div>
       </div>
-      
+      <p className="mb-3">
+      Drag-and-Drop task manager designed for hassle-free task management.
+        
+        
+      </p>
       <Dashboard />
       <div className="my-3 min-w-fit flex flex-col items-end">
         <h3 className="hidden lg:flex font-bold mb-2">Shortcuts</h3>
