@@ -26,4 +26,4 @@ TaskFlow! a modern and responsive task management application built with Next.js
 
 ## Video Demonstration
 
-![Video GIF](public/Taskflow.mp4)
+![Video GIF](public/Taskflow.gif)
