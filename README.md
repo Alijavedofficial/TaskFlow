@@ -26,7 +26,4 @@ TaskFlow! a modern and responsive task management application built with Next.js
 
 ## Video Demonstration
 
-<video width="800" controls>
-  <source src="public/Taskflow.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/Alijavedofficial/TaskFlow/blob/main/public/Taskflow.mp4
