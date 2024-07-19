@@ -24,6 +24,7 @@ TaskFlow! a modern and responsive task management application built with Next.js
 
 - **Live Site**: `taskfloow.vercel.app`
 
-## Video Demonstration
+## 📹 Video Demonstration
 
-https://github.com/Alijavedofficial/TaskFlow/blob/main/public/Taskflow.mp4
+[Watch the Video](https://github.com/Alijavedofficial/TaskFlow/raw/main/public/Taskflow.mp4)
+
